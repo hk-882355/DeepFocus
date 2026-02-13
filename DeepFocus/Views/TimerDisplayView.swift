@@ -85,7 +85,7 @@ struct TimerDisplayView: View {
                     .frame(width: 5, height: 5)
                     .shadow(color: glowColor.opacity(0.8), radius: 6)
                     .offset(y: -ringSize / 2)
-                    .rotationEffect(.degrees(360 * progress - 90))
+                    .rotationEffect(.degrees(360 * progress))
                     .animation(.easeInOut(duration: 0.5), value: progress)
             }
         }
