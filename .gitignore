@@ -1,0 +1,10 @@
+build/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+.DS_Store
+FORhk.md
+icons/generate_*.py

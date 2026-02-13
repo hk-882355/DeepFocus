@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepFocus - Stay in the Zone</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            background: #000;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 24px;
+            text-align: center;
+        }
+        .glow-ring {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 2px solid rgba(245, 240, 235, 0.06);
+            position: relative;
+            margin-bottom: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .glow-ring::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            border-top-color: #F5F0EB;
+            border-right-color: rgba(212, 197, 169, 0.4);
+            box-shadow: 0 0 20px rgba(212, 197, 169, 0.3);
+            animation: pulse 3s ease-in-out infinite;
+        }
+        .timer {
+            font-size: 48px;
+            font-weight: 200;
+            font-family: 'SF Mono', 'Menlo', monospace;
+            color: #fff;
+            letter-spacing: 4px;
+            text-shadow: 0 0 30px rgba(212, 197, 169, 0.4);
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            color: #F5F0EB;
+            margin-bottom: 12px;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #6E6E73;
+            letter-spacing: 3px;
+            margin-bottom: 48px;
+        }
+        .description {
+            max-width: 480px;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #8e8e93;
+            margin-bottom: 48px;
+        }
+        .features {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 56px;
+        }
+        .feature {
+            background: rgba(255,255,255, 0.03);
+            border: 0.5px solid rgba(255,255,255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            width: 180px;
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+        .feature-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #F5F0EB;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .feature-desc {
+            font-size: 12px;
+            color: #6E6E73;
+            line-height: 1.6;
+        }
+        .badge {
+            margin-bottom: 40px;
+        }
+        .badge img {
+            height: 54px;
+        }
+        .links {
+            display: flex;
+            gap: 24px;
+            font-size: 13px;
+        }
+        .links a {
+            color: #6E6E73;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .links a:hover { color: #F5F0EB; }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="glow-ring">
+        <span class="timer">25:00</span>
+    </div>
+
+    <h1>DEEPFOCUS</h1>
+    <p class="subtitle">STAY IN THE ZONE</p>
+
+    <p class="description">
+        A minimal Pomodoro timer designed with premium aesthetics.
+        Focus sessions, rest intervals, and long breaks &mdash;
+        all managed automatically so you can stay in your flow state.
+    </p>
+
+    <div class="features">
+        <div class="feature">
+            <div class="feature-icon">&#9201;</div>
+            <div class="feature-title">POMODORO</div>
+            <div class="feature-desc">Auto-cycling 4-session flow with customizable durations</div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">&#10024;</div>
+            <div class="feature-title">MINIMAL</div>
+            <div class="feature-desc">Dark premium UI with glow animations</div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">&#128274;</div>
+            <div class="feature-title">PRIVATE</div>
+            <div class="feature-desc">No data collection, no accounts, fully offline</div>
+        </div>
+    </div>
+
+    <div class="links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="https://github.com/hiroki-webdev/DeepFocus">GitHub</a>
+    </div>
+</body>
+</html>
