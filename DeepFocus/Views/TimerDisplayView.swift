@@ -72,7 +72,7 @@ struct TimerDisplayView: View {
                 .trim(from: 0, to: progress)
                 .stroke(
                     accentColor,
-                    style: StrokeStyle(lineWidth: ringLineWidth, lineCap: .round)
+                    style: StrokeStyle(lineWidth: ringLineWidth, lineCap: .butt)
                 )
                 .frame(width: ringSize, height: ringSize)
                 .rotationEffect(.degrees(-90))
