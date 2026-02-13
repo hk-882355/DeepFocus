@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MainTimerView: View {
     @State private var viewModel = TimerViewModel()
+    @State private var showInfo = false
 
     var body: some View {
         ZStack {
@@ -9,6 +10,11 @@ struct MainTimerView: View {
             contentLayer
         }
         .preferredColorScheme(.dark)
+        .sheet(isPresented: $showInfo) {
+            InfoSheetView()
+                .presentationDetents([.medium])
+                .presentationDragIndicator(.visible)
+        }
     }
 
     private var backgroundLayer: some View {
@@ -71,18 +77,21 @@ struct MainTimerView: View {
     }
 
     private var headerSection: some View {
-        VStack(spacing: 6) {
-            Text("DEEPFOCUS")
-                .font(.system(size: 16, weight: .medium, design: .default))
-                .foregroundStyle(Color(hex: 0xF5F0EB).opacity(0.9))
-                .tracking(6)
+        Button { showInfo = true } label: {
+            VStack(spacing: 6) {
+                Text("DEEPFOCUS")
+                    .font(.system(size: 16, weight: .medium, design: .default))
+                    .foregroundStyle(Color(hex: 0xF5F0EB).opacity(0.9))
+                    .tracking(6)
 
-            Text("stay in the zone")
-                .font(.system(size: 12, weight: .regular, design: .default))
-                .foregroundStyle(Color(hex: 0x6E6E73))
-                .tracking(3)
+                Text("stay in the zone")
+                    .font(.system(size: 12, weight: .regular, design: .default))
+                    .foregroundStyle(Color(hex: 0x6E6E73))
+                    .tracking(3)
+            }
+            .padding(.top, 16)
         }
-        .padding(.top, 16)
+        .buttonStyle(.plain)
     }
 }
 
